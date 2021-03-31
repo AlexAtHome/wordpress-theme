@@ -23,7 +23,7 @@ docker-compose up --build -d
 You can change the login screen logo in the `functions.php` file by changing the `$logo` variable value to your logo path.
 
 ### Add additional styles and scripts
-**DO NOT ADD THEMES VIA `<link>` AND `<script>` TAGS AT `header.php`**.
+**DO NOT ADD THEMES' STYLES AND SCRIPTS VIA `<link>` AND `<script>` TAGS AT `header.php`**.
 
 There's a better way to do this.
 
