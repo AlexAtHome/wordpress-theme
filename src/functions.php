@@ -44,9 +44,16 @@ register_nav_menus(array(
 
 add_theme_support('post-thumbnails');
 
-/* All your Theme Customization settings go here */
-require_once 'settings/settings.php';
+function require_whole_dir(string $dir) {
+  $files = glob( $dir . '/*.php');
+  foreach ($files as $file) {
+    require_once($file);   
+  }
+}
 
-require_once 'taxonomies/reviews.php';
+/* All your Theme Customization settings go here */
+require_whole_dir(__DIR__ . '/settings');
+
+require_whole_dir(__DIR__ . '/taxonomies');
 
 ?>

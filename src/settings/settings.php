@@ -12,6 +12,12 @@ function init_colors_settings ($wp_customize) {
     'section' => "colors",
   ]);
 
+  $customizer->add_color_setting("lead-background", [
+    'transport' => 'refresh',
+    'label' => __('Lead section color'),
+    'section' => "colors",
+  ]);
+
   $customizer->add_setting("lead-title", [
     'label' => __('Lead title'),
     'section' => 'static_front_page',
