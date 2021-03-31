@@ -1,10 +1,10 @@
-# Project name here
+# &lt;?= Project name here ?&gt;
 
 ## Things to do before deploying your theme to production
 - [ ] Remove all `.gitkeep` files and unnecessary directories in the `src` dir
 - [ ] Fill `style.css` metadata section with actual theme details
-- [ ] Remove settings files from `settings` directory if you don't use them
-- [ ] Remove the taxonomy files from `taxonomies` directory if you don't need them too
+- [ ] Remove settings or their files from `settings` directory if you don't use them
+- [ ] Remove taxonomies or their files from `taxonomies` directory if you don't need them too
 - [ ] Make your own `screenshot.png` file. You can also use JPEG format instead. Usually they're made with 1200x900 resolution, but 1800x1350 just looks fine on 4K screens.
 - [ ] Put your own Login screen logo at `functions.php` (or delete it and bring back the default one)
 
@@ -52,3 +52,14 @@ if (is_front_page()):
   wp_enqueue_script('swiper-slider', 'https://unpkg.com/swiper/swiper-bundle.min.css', [], '6.5.3');
 endif;
 ```
+
+### Use theme versioning
+
+If you changed something in the theme styles or scripts:
+1. Open `functions.php`
+2. Find the `THEME_VERSION` definition
+3. Set new theme version according to kind of changes you've made. I recommend you to use [semantic versioning](https://semver.org/)
+4. Don't forget to change the version at `style.css`
+
+### Deploy
+You can just `rsync` or `scp` the `./src` directory. But don't just leave its name as `src` - call it by your theme name. Make the Continuous Deployment config file, if you can.
