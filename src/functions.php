@@ -47,4 +47,6 @@ add_theme_support('post-thumbnails');
 /* All your Theme Customization settings go here */
 require_once 'settings/settings.php';
 
+require_once 'taxonomies/reviews.php';
+
 ?>
