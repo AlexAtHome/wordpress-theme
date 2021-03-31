@@ -1,8 +1,10 @@
 # Project name here
 
-## Things to do after applying this template
+## Things to do before deploying your theme to production
 - [ ] Remove all `.gitkeep` files and unnecessary directories in the `src` dir
 - [ ] Fill `style.css` metadata section with actual theme details
+- [ ] Remove settings files from `settings` directory if you don't use them
+- [ ] Remove the taxonomy files from `taxonomies` directory if you don't need them too
 - [ ] Make your own `screenshot.png` file. You can also use JPEG format instead. Usually they're made with 1200x900 resolution, but 1800x1350 just looks fine on 4K screens.
 - [ ] Put your own Login screen logo at `functions.php` (or delete it and bring back the default one)
 

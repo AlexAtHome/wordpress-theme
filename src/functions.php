@@ -44,4 +44,7 @@ register_nav_menus(array(
 
 add_theme_support('post-thumbnails');
 
+/* All your Theme Customization settings go here */
+require_once 'settings/settings.php';
+
 ?>
