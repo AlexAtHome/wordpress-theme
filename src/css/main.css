@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-sans-serif: Cantarell, 'Segoe UI', Tahoma, Ubuntu, Geneva, Verdana, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+  background-color: #eee;
+  color: #222;
+  font-family: var(--font-sans-serif);
+  font-size: 2em;
+  text-align: center;
+  margin: 0px;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  display: block;
+  margin: 0 auto;
+}
+
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.customize-support .page-wrap {
+  min-height: calc(100vh - 32px);
+}
+
+.footer {
+  margin-top: auto;
+}
