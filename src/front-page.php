@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <header class="front-page-header">
   <div class="container">
-    <h3 style="font-size: 76px"><?= get_theme_mod('lead-title', 'Your own Wordpress theme is ready!'); ?></h3>
+    <h3 style="font-size: 3em"><?= get_theme_mod('lead-title', 'Your own Wordpress theme is ready!'); ?></h3>
     <p><?= get_theme_mod('lead-text', "But it's all blank! Let's make a cooler one :)"); ?></p>
   </div>
 </header>

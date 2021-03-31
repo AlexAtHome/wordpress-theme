@@ -21,6 +21,12 @@ body {
   padding: 0;
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 1em;
+  }
+}
+
 section {
   padding: 15px;
 }
@@ -51,7 +57,11 @@ section {
 }
 
 .front-page-header {
-  padding: 100px 0;
+  padding: 60px 15px 100px;
   background-color: var(--header-color);
   color: var(--background-color);
+}
+
+.footer {
+  padding: 15px;
 }
