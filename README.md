@@ -49,7 +49,7 @@ Example:
 ```php
 if (is_front_page()):
   wp_enqueue_style('swiper-slider', 'https://unpkg.com/swiper/swiper-bundle.css', [], '6.5.3');
-  wp_enqueue_script('swiper-slider', 'https://unpkg.com/swiper/swiper-bundle.min.css', [], '6.5.3');
+  wp_enqueue_script('swiper-slider', 'https://unpkg.com/swiper/swiper-bundle.js', [], '6.5.3');
 endif;
 ```
 
