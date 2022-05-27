@@ -1,15 +1,14 @@
 # This is file is for development purposes only!
-
 version: '3.1'
 
 services:
   wordpress:
-    image: wordpress:latest
+    image: wordpress:6-php8.0-fpm-alpine
     restart: always
-    ports:
-      - 8080:80
     volumes:
       - ./src:/var/www/html/wp-content/themes/wip
+      - ./uploads:/var/www/html/wp-content/uploads
+      - html:/var/www/html
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: admin
@@ -17,6 +16,8 @@ services:
       WORDPRESS_DB_NAME: wordpress_db
       WORDPRESS_DEBUG: 1
       WP_DEBUG: 1
+    depends_on:
+      - db
 
   db:
     image: mysql:5.7
@@ -28,3 +29,19 @@ services:
       MYSQL_PASSWORD: qwerty
     volumes:
       - ./mysql:/var/lib/mysql
+
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - html:/var/www/html
+      - ./nginx:/etc/nginx/conf.d
+      - ./src:/var/www/html/wp-content/themes/wip
+      - ./uploads:/var/www/html/wp-content/uploads
+    ports:
+      - '8080:80'
+    depends_on:
+      - wordpress
+    restart: unless-stopped
+
+volumes:
+  html:
