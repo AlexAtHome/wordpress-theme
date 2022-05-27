@@ -1,13 +1,52 @@
+'use strict'
+
+const commitTypes = [
+	{
+		description: 'Fresh new feature',
+		emoji: '🚀',
+		value: 'feat'
+	},
+	{
+		value: 'improve',
+		emoji: '👷',
+		description: 'Code that improves something'
+	},
+	{
+		description: 'Bug fix',
+		emoji: '🐛',
+		value: 'fix'
+	},
+	{
+		description: 'Code change that neither fixes a bug or adds a feature',
+		emoji: '💡',
+		value: 'refactor'
+	},
+	{
+		description: 'CI/CD related changes',
+		emoji: '👷',
+		value: 'ci'
+	},
+	{
+		description: 'Build process or auxiliary tool changes',
+		emoji: '🧰',
+		value: 'chore'
+	},
+	{
+		description: 'Markup, white-space, formatting, missing semi-colons...',
+		emoji: '🧁',
+		value: 'style'
+	},
+]
+
+const types = {}
+
+for (const type of commitTypes) {
+	types[type.value] = type
+}
+
 module.exports = {
 	disableEmoji: false,
-	list: [
-		'feat',
-		'fix',
-		'refactor',
-		'style',
-		'ci',
-		'chore'
-	],
+	list: commitTypes.map(type => type.value),
 	maxMessageLength: 64,
 	minMessageLength: 3,
 	questions: [
@@ -17,36 +56,5 @@ module.exports = {
 		'body',
 		'breaking'
 	],
-	types: {
-		feat: {
-			description: 'A new feature',
-			emoji: '🚀',
-			value: 'feat'
-		},
-		fix: {
-			description: 'A bug fix',
-			emoji: '🐛',
-			value: 'fix'
-		},
-		refactor: {
-			description: 'A code change that neither fixes a bug or adds a feature',
-			emoji: '💡',
-			value: 'refactor'
-		},
-		style: {
-			description: 'Markup, white-space, formatting, missing semi-colons...',
-			emoji: '🧁',
-			value: 'style'
-		},
-		ci: {
-			description: 'CI/CD related changes',
-			emoji: '👷',
-			value: 'ci'
-		},
-		chore: {
-			description: 'Build process or auxiliary tool changes',
-			emoji: '🧰',
-			value: 'chore'
-		}
-	}
+	types
 }
